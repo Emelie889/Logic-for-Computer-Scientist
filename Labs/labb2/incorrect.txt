@@ -1,0 +1,16 @@
+[neg(imp(p,q))].
+imp(q,p).
+[
+    [1, neg(imp(p,q)), premise],
+    [
+        [2, q, assumption],
+        [
+            [3, p, assumption],
+            [4, q, copy(2)]
+        ],
+        [5, imp(p,q), impint(3,4)],
+        [6, cont, negel(5,1)],
+        [7, p, contel(6)]
+    ],
+    [8, imp(q,p), impint(2,6)]
+].

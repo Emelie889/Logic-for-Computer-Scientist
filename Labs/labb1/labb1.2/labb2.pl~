@@ -1,0 +1,10 @@
+partstring([], _, _).
+partstring(List, L, F) :-
+    append(_, Temp, List),
+    append(F, _, Temp),
+    length(F, L),
+    L>0.
+
+append([], L, L).
+append([H|T], L, [H|R]) :-
+    append(T, L, R).
